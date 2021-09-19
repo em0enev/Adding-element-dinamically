@@ -10,11 +10,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const body = document.querySelector("body");
 
-  for (let i = 1; i <= 5; i++) {
-    const element = document.createElement("article")
-    element.classList.add("message")
-    element.textContent = `Message ${i}`    
-    body.appendChild(element);
+  body.addEventListener('click', () => createFiveElements())
+
+  function createFiveElements(){
+    for (let i = 1; i <= 5; i++) {
+      const element = document.createElement("article")
+      element.classList.add("message")
+      element.textContent = `Message ${i}`    
+      body.appendChild(element);
+    }
   }
 
 });
